@@ -165,6 +165,13 @@ modal.addEventListener('click', (e) => {
     }
 });
 
+document.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === 27) {
+        closeModal();
+    }
+} 
+);
+
 function createVideo() {
     var tag = document.createElement('script');
 
