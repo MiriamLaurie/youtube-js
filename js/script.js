@@ -90,7 +90,7 @@ more.addEventListener('click', () => {
 
     for (let i = 0; i < data[0].length; i++) {
         let card = document.createElement('a');
-        card.classList.add('videos__item');
+        card.classList.add('videos__item', 'videos__item-active');
         card.setAttribute('data-url', data[3][i]);
         card.innerHTML = `
             <img src="${data[0][i]}" alt="thumb">
@@ -102,5 +102,8 @@ more.addEventListener('click', () => {
                 </div>
         `;
         videosWrapper.appendChild(card);
+        setTimeout(() => {
+            card.classList.remove('videos__item-active');
+        }, 10); //анимация ч\з 10 м\сек
     }
 });
